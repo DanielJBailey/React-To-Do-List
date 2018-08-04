@@ -1,6 +1,10 @@
 # Simple To-Do List
 A simple to-do list created entirely in React.
 
+# View Demo
+<a href="https://danieljbailey.github.io/React-To-Do-List/">Live</a>
+
+
 ## Basic Functionality Goals
 * Be able to create tasks using input box.
 * Be able to check completed tasks and store in completed tasks once finished for reference.
