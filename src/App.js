@@ -26,6 +26,26 @@ class App extends Component {
 			input: event.target.value
 		});
 	}
+
+	// use componentDidMount() to set intial state from localstorage
+	componentDidMount() {
+		let completed = JSON.parse(localStorage.getItem('completedTasks'));
+		let current = JSON.parse(localStorage.getItem('currentTasks'));
+		this.setState({
+			done: completed,
+			list: current
+		});
+	}
+	
+	//use componentDidUpdate to update localstorage on each state change
+	componentDidUpdate() {
+		localStorage.setItem('completedTasks', JSON.stringify(this.state.done));
+		localStorage.setItem('currentTasks', JSON.stringify(this.state.list));
+		let completed = JSON.parse(localStorage.getItem('completedTasks'));
+		console.log(completed);
+		let current = JSON.parse(localStorage.getItem('currentTasks'));
+		console.log(current);
+	}
 	
 	//function to finish task
 	finishTask(finishedItem) {
