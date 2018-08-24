@@ -12,9 +12,9 @@ const List = props => {
 	if (props.list.length > 0) {
 		currentTitle = <h4 className="task-title">Current Tasks</h4>;
 		currenthr = <hr />;
-		currentList = props.list.map(function(item) {
+		currentList = props.list.map(function(item, index) {
 			return (
-				<li key={item} className="current-item">
+				<li key={index} className="current-item">
 					<div className="item-description">{item.text}</div>
 					<div className="date-actions">
 						<div className="item-date">{item.date}</div>
@@ -34,9 +34,9 @@ const List = props => {
 	if (props.done.length > 0) {
 		doneTitle = <h4 className="task-title">Completed Tasks</h4>;
 		donehr = <hr />;
-		doneList = props.done.map(function(item) {
+		doneList = props.done.map(function(item, index) {
 			return (
-				<li key={item} className="done-item">
+				<li key={index} className="done-item">
 					<div className="item-description">{item.text}</div>
 					<div className="date-actions">
 						<div className="item-date">{moment(new Date()).format("h:mm a")}</div>

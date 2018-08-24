@@ -28,7 +28,7 @@ class App extends Component {
 	}
 
 	// use componentDidMount() to set intial state from localstorage
-	componentDidMount() {
+	componentWillMount() {
 		let completed = JSON.parse(localStorage.getItem('completedTasks'));
 		let current = JSON.parse(localStorage.getItem('currentTasks'));
 		this.setState({
