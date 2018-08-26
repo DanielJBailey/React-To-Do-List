@@ -31,10 +31,12 @@ class App extends Component {
 	componentWillMount() {
 		let completed = JSON.parse(localStorage.getItem('completedTasks'));
 		let current = JSON.parse(localStorage.getItem('currentTasks'));
-		this.setState({
-			done: completed,
-			list: current
-		});
+		if(!completed == null && current == null) {
+			this.setState({
+				done: completed,
+				list: current
+			});
+		}
 	}
 	
 	//use componentDidUpdate to update localstorage on each state change
